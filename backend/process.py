@@ -502,15 +502,18 @@ def resolve_urls(raw_urls, limit=None):
 def get_meta(url):
     try:
         r = subprocess.run(
-            ["yt-dlp", "--dump-json", "--no-warnings", url],
+            ["yt-dlp", "--dump-json", "--no-warnings", "--extractor-args", "youtube:player_client="android", url],
             capture_output=True, text=True, timeout=90,
         )
+        
         if r.returncode != 0:
             print(f"   ❌ {r.stderr.strip()[:160]}")
             return None
         return json.loads(r.stdout)
     except Exception as e:
         print(f"   ❌ {e}")
+        print("yt-dlp stderr:")
+        print(r.stderr)
         return None
 
 def download_video(url, file_id, category, audio_only=False):
