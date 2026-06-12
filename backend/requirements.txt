@@ -3,3 +3,4 @@ youtube-transcript-api
 azure-storage-blob
 fastapi
 uvicorn
+python-dotenv
