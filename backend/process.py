@@ -502,7 +502,7 @@ def resolve_urls(raw_urls, limit=None):
 def get_meta(url):
     try:
         r = subprocess.run(
-            ["yt-dlp", "--dump-json", "--no-warnings", "--extractor-args", "youtube:player_client="android", url],
+            ["yt-dlp", "--dump-json", "--no-warnings", "--extractor-args", "youtube:player_client=android", url],
             capture_output=True, text=True, timeout=90,
         )
         
