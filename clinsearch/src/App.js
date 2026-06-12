@@ -2,7 +2,8 @@ import { useState } from "react";
 
 // ─── CONFIG ──────────────────────────────────────────────────────────────────
 // Development: Use localhost. Change to your production URL when deploying.
-const FUNCTION_BASE_URL = "http://localhost:8000";
+// const FUNCTION_BASE_URL = "http://localhost:8000";
+const FUNCTION_BASE_URL = "https://rag-ytvideo1.onrender.com";
 
 const API = {
   process: `${FUNCTION_BASE_URL}/process`,
